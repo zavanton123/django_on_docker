@@ -1,3 +1,9 @@
 from django.test import TestCase
 
-# Create your tests here.
+from university.models import Student
+
+
+class StudentTest(TestCase):
+    def testStudent(self):
+        student = Student(name='Mike')
+        self.assertEquals(student.name, 'Mike')
