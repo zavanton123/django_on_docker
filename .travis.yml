@@ -18,15 +18,14 @@ after_success:
   - docker push zavanton/django-api
   - docker push zavanton/django-nginx
 
-#deploy:
-#  provider: elasticbeanstalk
-#  region: us-east-2
-#  app: multi-docker
-#  env: Multidocker-env
-#  bucket_name: elasticbeanstalk-us-east-2-565447122202
-#  bucket_path: docker-multi
-#  on:
-#    branch: master
-#  access_key_id: $AWS_ACCESS_KEY
-#  secret_access_key: $AWS_SECRET_KEY
-#
+deploy:
+  provider: elasticbeanstalk
+  region: us-east-2
+  app: django_on_docker
+  env: Djangoondocker-env
+  bucket_name: elasticbeanstalk-us-east-2-565447122202
+  bucket_path: docker-django
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
